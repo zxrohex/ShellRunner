@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace ShellRun
+namespace ShellRunner
 {
     public partial class OutputConsole : Form
     {

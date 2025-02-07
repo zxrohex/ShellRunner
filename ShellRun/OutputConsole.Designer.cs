@@ -1,4 +1,4 @@
-﻿namespace ShellRun
+﻿namespace ShellRunner
 {
     partial class OutputConsole
     {

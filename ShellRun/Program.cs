@@ -1,4 +1,4 @@
-namespace ShellRun
+namespace ShellRunner
 {
     internal static class Program
     {
