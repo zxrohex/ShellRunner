@@ -2,6 +2,8 @@
 using System.Diagnostics;
 using System.Windows.Forms;
 
+using ShellRunner.Core;
+
 namespace ShellRunner
 {
     public partial class OutputConsole : Form
@@ -12,19 +14,24 @@ namespace ShellRunner
         public delegate void UserExiting();
         public event UserExiting OnUserExiting;
 
-        private Process _process;
+        private ProcessExecutor _executor;
 
-        public OutputConsole(Process process)
+        public OutputConsole(ProcessExecutor process)
         {
             InitializeComponent();
-            _process = process;
-            _process.Exited += (sender, e) =>
+            _executor = process;
+            _executor.Process.Exited += (sender, e) =>
             {
                 Invoke(() =>
                 {
                     WriteInputBtn.Enabled = false;
                     WriteInputTextBox.Enabled = false;
                 });
+            };
+
+            _executor.OnOutputDataReceived += (data) =>
+            {
+                AppendText(data);
             };
         }
 
@@ -39,15 +46,17 @@ namespace ShellRunner
 
         private void WriteInputBtn_Click(object sender, EventArgs e)
         {
-            OnInputWritten?.Invoke(WriteInputTextBox.Text);
+            //OnInputWritten?.Invoke(WriteInputTextBox.Text);
+
+            _executor.WriteToStdInput(WriteInputTextBox.Text);
         }
 
         private void OutputConsole_FormClosing(object sender, FormClosingEventArgs e)
         {
             // Kill the process before disposing the form
-            if (_process != null && !_process.HasExited)
+            if (_executor.Process != null && !_executor.Process.HasExited)
             {
-                _process.Kill();
+                _executor.Process.Kill();
             }
 
             OnUserExiting?.Invoke();
