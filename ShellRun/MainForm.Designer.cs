@@ -28,292 +28,429 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            FileGroupBox = new GroupBox();
-            SelectFileBtn = new Button();
-            FileTextBox = new TextBox();
-            groupBox1 = new GroupBox();
-            ExecutionTypeComboBox = new ComboBox();
-            groupBox2 = new GroupBox();
-            ArgsTextBox = new TextBox();
-            ExecuteBtn = new Button();
-            groupBox3 = new GroupBox();
-            LoadUserProfileCheckBox = new CheckBox();
-            RedirectAllOutputCheckBox = new CheckBox();
-            CreateNoWindowCheckBox = new CheckBox();
-            panel2 = new Panel();
-            SystemInformationLabel = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            components = new System.ComponentModel.Container();
+            ApplicationMainStatusStrip = new StatusStrip();
+            MainToolStripStatusLabel = new ToolStripStatusLabel();
+            MainInfoToolStripStatusLabel = new ToolStripStatusLabel();
             ApplicationMainMenuStrip = new MenuStrip();
-            shellRunnerToolStripMenuItem = new ToolStripMenuItem();
-            überToolStripMenuItem = new ToolStripMenuItem();
-            panel1.SuspendLayout();
-            FileGroupBox.SuspendLayout();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
-            panel2.SuspendLayout();
-            ApplicationMainMenuStrip.SuspendLayout();
+            ApplicationHeaderPanel = new Panel();
+            RunOrKillButton = new Button();
+            InfoStatusLabel = new Label();
+            TitleStatusLabel = new Label();
+            ProcessIconPictureBox = new PictureBox();
+            SettingsFileGroupBox = new GroupBox();
+            SelectFileButton = new Button();
+            FileTextBox = new TextBox();
+            InformationTabControl = new TabControl();
+            ProcessInformationTabPage = new TabPage();
+            ProcessMoreInfoLabel = new Label();
+            ProcessDescriptionLabel = new Label();
+            ProcessTitleLabel = new Label();
+            ProcessIconNdPictureBox = new PictureBox();
+            ProcessOutputTabPage = new TabPage();
+            SendStdInputButton = new Button();
+            StdInputTextBox = new TextBox();
+            OutputLogRichTextBox = new RichTextBox();
+            ExecutionSettingsTabControl = new TabControl();
+            ExecutionSettingsTabPage = new TabPage();
+            SettingsMainGroupBox = new GroupBox();
+            SettingsCreationGroupBox = new GroupBox();
+            RunAsCheckBox = new CheckBox();
+            LoadUserProfileCheckBox = new CheckBox();
+            CreateNoWindowCheckBox = new CheckBox();
+            SettingsArgumentsGroupBox = new GroupBox();
+            ArgsTextBox = new TextBox();
+            SettingsExecutionTypeGroupBox = new GroupBox();
+            ExecutionTypeComboBox = new ComboBox();
+            ProcessInformationUpdateTimer = new System.Windows.Forms.Timer(components);
+            ApplicationMainStatusStrip.SuspendLayout();
+            ApplicationHeaderPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ProcessIconPictureBox).BeginInit();
+            SettingsFileGroupBox.SuspendLayout();
+            InformationTabControl.SuspendLayout();
+            ProcessInformationTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ProcessIconNdPictureBox).BeginInit();
+            ProcessOutputTabPage.SuspendLayout();
+            ExecutionSettingsTabControl.SuspendLayout();
+            ExecutionSettingsTabPage.SuspendLayout();
+            SettingsMainGroupBox.SuspendLayout();
+            SettingsCreationGroupBox.SuspendLayout();
+            SettingsArgumentsGroupBox.SuspendLayout();
+            SettingsExecutionTypeGroupBox.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // ApplicationMainStatusStrip
             // 
-            panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.White;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(FileGroupBox);
-            panel1.Location = new Point(21, 218);
-            panel1.Margin = new Padding(5, 6, 5, 6);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(684, 154);
-            panel1.TabIndex = 0;
+            ApplicationMainStatusStrip.Items.AddRange(new ToolStripItem[] { MainToolStripStatusLabel, MainInfoToolStripStatusLabel });
+            ApplicationMainStatusStrip.Location = new Point(0, 541);
+            ApplicationMainStatusStrip.Name = "ApplicationMainStatusStrip";
+            ApplicationMainStatusStrip.Size = new Size(396, 22);
+            ApplicationMainStatusStrip.TabIndex = 0;
+            ApplicationMainStatusStrip.Text = "statusStrip1";
             // 
-            // FileGroupBox
+            // MainToolStripStatusLabel
             // 
-            FileGroupBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            FileGroupBox.Controls.Add(SelectFileBtn);
-            FileGroupBox.Controls.Add(FileTextBox);
-            FileGroupBox.Location = new Point(21, 20);
-            FileGroupBox.Margin = new Padding(5, 6, 5, 6);
-            FileGroupBox.Name = "FileGroupBox";
-            FileGroupBox.Padding = new Padding(5, 6, 5, 6);
-            FileGroupBox.Size = new Size(641, 106);
-            FileGroupBox.TabIndex = 1;
-            FileGroupBox.TabStop = false;
-            FileGroupBox.Text = "File";
+            MainToolStripStatusLabel.Name = "MainToolStripStatusLabel";
+            MainToolStripStatusLabel.Size = new Size(190, 17);
+            MainToolStripStatusLabel.Spring = true;
+            MainToolStripStatusLabel.Text = "Idling.";
+            MainToolStripStatusLabel.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // SelectFileBtn
+            // MainInfoToolStripStatusLabel
             // 
-            SelectFileBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            SelectFileBtn.Location = new Point(518, 38);
-            SelectFileBtn.Margin = new Padding(5, 6, 5, 6);
-            SelectFileBtn.Name = "SelectFileBtn";
-            SelectFileBtn.Size = new Size(113, 46);
-            SelectFileBtn.TabIndex = 1;
-            SelectFileBtn.Text = "Select";
-            SelectFileBtn.UseVisualStyleBackColor = true;
-            SelectFileBtn.Click += SelectFileBtn_Click;
+            MainInfoToolStripStatusLabel.Name = "MainInfoToolStripStatusLabel";
+            MainInfoToolStripStatusLabel.Size = new Size(190, 17);
+            MainInfoToolStripStatusLabel.Spring = true;
+            MainInfoToolStripStatusLabel.Text = "No process started yet.";
+            MainInfoToolStripStatusLabel.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // ApplicationMainMenuStrip
+            // 
+            ApplicationMainMenuStrip.Location = new Point(0, 0);
+            ApplicationMainMenuStrip.Name = "ApplicationMainMenuStrip";
+            ApplicationMainMenuStrip.Size = new Size(396, 24);
+            ApplicationMainMenuStrip.TabIndex = 1;
+            ApplicationMainMenuStrip.Text = "menuStrip1";
+            // 
+            // ApplicationHeaderPanel
+            // 
+            ApplicationHeaderPanel.BackColor = Color.White;
+            ApplicationHeaderPanel.BorderStyle = BorderStyle.Fixed3D;
+            ApplicationHeaderPanel.Controls.Add(RunOrKillButton);
+            ApplicationHeaderPanel.Controls.Add(InfoStatusLabel);
+            ApplicationHeaderPanel.Controls.Add(TitleStatusLabel);
+            ApplicationHeaderPanel.Controls.Add(ProcessIconPictureBox);
+            ApplicationHeaderPanel.Dock = DockStyle.Top;
+            ApplicationHeaderPanel.Location = new Point(0, 24);
+            ApplicationHeaderPanel.Name = "ApplicationHeaderPanel";
+            ApplicationHeaderPanel.Size = new Size(396, 84);
+            ApplicationHeaderPanel.TabIndex = 2;
+            // 
+            // RunOrKillButton
+            // 
+            RunOrKillButton.Image = Properties.Resources.Run;
+            RunOrKillButton.Location = new Point(353, 43);
+            RunOrKillButton.Name = "RunOrKillButton";
+            RunOrKillButton.Size = new Size(30, 23);
+            RunOrKillButton.TabIndex = 3;
+            RunOrKillButton.UseVisualStyleBackColor = true;
+            RunOrKillButton.Click += RunOrKillButton_Click;
+            // 
+            // InfoStatusLabel
+            // 
+            InfoStatusLabel.Location = new Point(47, 25);
+            InfoStatusLabel.Name = "InfoStatusLabel";
+            InfoStatusLabel.Size = new Size(336, 15);
+            InfoStatusLabel.TabIndex = 2;
+            InfoStatusLabel.Text = "%SysOrProcInfo%";
+            // 
+            // TitleStatusLabel
+            // 
+            TitleStatusLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            TitleStatusLabel.Location = new Point(47, 8);
+            TitleStatusLabel.Name = "TitleStatusLabel";
+            TitleStatusLabel.Size = new Size(336, 16);
+            TitleStatusLabel.TabIndex = 1;
+            TitleStatusLabel.Text = "ShellRunner";
+            // 
+            // ProcessIconPictureBox
+            // 
+            ProcessIconPictureBox.Location = new Point(9, 8);
+            ProcessIconPictureBox.Name = "ProcessIconPictureBox";
+            ProcessIconPictureBox.Size = new Size(32, 32);
+            ProcessIconPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
+            ProcessIconPictureBox.TabIndex = 0;
+            ProcessIconPictureBox.TabStop = false;
+            // 
+            // SettingsFileGroupBox
+            // 
+            SettingsFileGroupBox.Controls.Add(SelectFileButton);
+            SettingsFileGroupBox.Controls.Add(FileTextBox);
+            SettingsFileGroupBox.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            SettingsFileGroupBox.Location = new Point(11, 113);
+            SettingsFileGroupBox.Name = "SettingsFileGroupBox";
+            SettingsFileGroupBox.Size = new Size(374, 60);
+            SettingsFileGroupBox.TabIndex = 3;
+            SettingsFileGroupBox.TabStop = false;
+            SettingsFileGroupBox.Text = "File";
+            // 
+            // SelectFileButton
+            // 
+            SelectFileButton.Location = new Point(288, 22);
+            SelectFileButton.Name = "SelectFileButton";
+            SelectFileButton.Size = new Size(75, 23);
+            SelectFileButton.TabIndex = 1;
+            SelectFileButton.Text = "Select";
+            SelectFileButton.UseVisualStyleBackColor = true;
+            SelectFileButton.Click += SelectFileButton_Click;
             // 
             // FileTextBox
             // 
-            FileTextBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            FileTextBox.Location = new Point(19, 43);
-            FileTextBox.Margin = new Padding(5, 6, 5, 6);
+            FileTextBox.Location = new Point(11, 22);
             FileTextBox.Name = "FileTextBox";
-            FileTextBox.Size = new Size(486, 35);
+            FileTextBox.Size = new Size(271, 23);
             FileTextBox.TabIndex = 0;
             // 
-            // groupBox1
+            // InformationTabControl
             // 
-            groupBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox1.Controls.Add(ExecutionTypeComboBox);
-            groupBox1.Location = new Point(21, 396);
-            groupBox1.Margin = new Padding(5, 6, 5, 6);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(5, 6, 5, 6);
-            groupBox1.Size = new Size(686, 100);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Execution-Typ";
+            InformationTabControl.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            InformationTabControl.Controls.Add(ProcessInformationTabPage);
+            InformationTabControl.Controls.Add(ProcessOutputTabPage);
+            InformationTabControl.Location = new Point(11, 410);
+            InformationTabControl.Name = "InformationTabControl";
+            InformationTabControl.SelectedIndex = 0;
+            InformationTabControl.Size = new Size(374, 122);
+            InformationTabControl.TabIndex = 4;
             // 
-            // ExecutionTypeComboBox
+            // ProcessInformationTabPage
             // 
-            ExecutionTypeComboBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            ExecutionTypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            ExecutionTypeComboBox.FormattingEnabled = true;
-            ExecutionTypeComboBox.Items.AddRange(new object[] { "NoShellExecute", "ShellExecute", "CMD /k" });
-            ExecutionTypeComboBox.Location = new Point(14, 38);
-            ExecutionTypeComboBox.Margin = new Padding(5, 6, 5, 6);
-            ExecutionTypeComboBox.Name = "ExecutionTypeComboBox";
-            ExecutionTypeComboBox.Size = new Size(655, 38);
-            ExecutionTypeComboBox.TabIndex = 0;
-            ExecutionTypeComboBox.SelectedIndexChanged += ExecutionTypeComboBox_SelectedIndexChanged;
+            ProcessInformationTabPage.Controls.Add(ProcessMoreInfoLabel);
+            ProcessInformationTabPage.Controls.Add(ProcessDescriptionLabel);
+            ProcessInformationTabPage.Controls.Add(ProcessTitleLabel);
+            ProcessInformationTabPage.Controls.Add(ProcessIconNdPictureBox);
+            ProcessInformationTabPage.Location = new Point(4, 24);
+            ProcessInformationTabPage.Name = "ProcessInformationTabPage";
+            ProcessInformationTabPage.Padding = new Padding(3);
+            ProcessInformationTabPage.Size = new Size(366, 94);
+            ProcessInformationTabPage.TabIndex = 0;
+            ProcessInformationTabPage.Text = "Process Information";
+            ProcessInformationTabPage.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // ProcessMoreInfoLabel
             // 
-            groupBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox2.Controls.Add(ArgsTextBox);
-            groupBox2.Location = new Point(21, 508);
-            groupBox2.Margin = new Padding(5, 6, 5, 6);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Padding = new Padding(5, 6, 5, 6);
-            groupBox2.Size = new Size(686, 100);
-            groupBox2.TabIndex = 2;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Argumente";
+            ProcessMoreInfoLabel.Location = new Point(7, 46);
+            ProcessMoreInfoLabel.Name = "ProcessMoreInfoLabel";
+            ProcessMoreInfoLabel.Size = new Size(353, 40);
+            ProcessMoreInfoLabel.TabIndex = 3;
+            ProcessMoreInfoLabel.Text = "Some more information will display here once you start a process.";
             // 
-            // ArgsTextBox
+            // ProcessDescriptionLabel
             // 
-            ArgsTextBox.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            ArgsTextBox.Location = new Point(14, 38);
-            ArgsTextBox.Margin = new Padding(5, 6, 5, 6);
-            ArgsTextBox.Name = "ArgsTextBox";
-            ArgsTextBox.Size = new Size(655, 35);
-            ArgsTextBox.TabIndex = 0;
+            ProcessDescriptionLabel.Location = new Point(45, 21);
+            ProcessDescriptionLabel.Name = "ProcessDescriptionLabel";
+            ProcessDescriptionLabel.Size = new Size(314, 17);
+            ProcessDescriptionLabel.TabIndex = 2;
+            ProcessDescriptionLabel.Text = "Start a process.";
             // 
-            // ExecuteBtn
+            // ProcessTitleLabel
             // 
-            ExecuteBtn.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            ExecuteBtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            ExecuteBtn.Location = new Point(549, 790);
-            ExecuteBtn.Margin = new Padding(5, 6, 5, 6);
-            ExecuteBtn.Name = "ExecuteBtn";
-            ExecuteBtn.Size = new Size(158, 46);
-            ExecuteBtn.TabIndex = 3;
-            ExecuteBtn.Text = "Execute";
-            ExecuteBtn.UseVisualStyleBackColor = true;
-            ExecuteBtn.Click += ExecuteBtn_Click;
+            ProcessTitleLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            ProcessTitleLabel.Location = new Point(45, 6);
+            ProcessTitleLabel.Name = "ProcessTitleLabel";
+            ProcessTitleLabel.Size = new Size(314, 16);
+            ProcessTitleLabel.TabIndex = 1;
+            ProcessTitleLabel.Text = "No process started yet.";
             // 
-            // groupBox3
+            // ProcessIconNdPictureBox
             // 
-            groupBox3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox3.Controls.Add(LoadUserProfileCheckBox);
-            groupBox3.Controls.Add(RedirectAllOutputCheckBox);
-            groupBox3.Controls.Add(CreateNoWindowCheckBox);
-            groupBox3.Location = new Point(21, 620);
-            groupBox3.Margin = new Padding(5, 6, 5, 6);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Padding = new Padding(5, 6, 5, 6);
-            groupBox3.Size = new Size(686, 142);
-            groupBox3.TabIndex = 4;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Andere Optionen";
+            ProcessIconNdPictureBox.BorderStyle = BorderStyle.Fixed3D;
+            ProcessIconNdPictureBox.Location = new Point(7, 6);
+            ProcessIconNdPictureBox.Name = "ProcessIconNdPictureBox";
+            ProcessIconNdPictureBox.Size = new Size(32, 32);
+            ProcessIconNdPictureBox.TabIndex = 0;
+            ProcessIconNdPictureBox.TabStop = false;
+            // 
+            // ProcessOutputTabPage
+            // 
+            ProcessOutputTabPage.Controls.Add(SendStdInputButton);
+            ProcessOutputTabPage.Controls.Add(StdInputTextBox);
+            ProcessOutputTabPage.Controls.Add(OutputLogRichTextBox);
+            ProcessOutputTabPage.Location = new Point(4, 24);
+            ProcessOutputTabPage.Name = "ProcessOutputTabPage";
+            ProcessOutputTabPage.Padding = new Padding(3);
+            ProcessOutputTabPage.Size = new Size(366, 94);
+            ProcessOutputTabPage.TabIndex = 1;
+            ProcessOutputTabPage.Text = "Process Output";
+            ProcessOutputTabPage.UseVisualStyleBackColor = true;
+            // 
+            // SendStdInputButton
+            // 
+            SendStdInputButton.Enabled = false;
+            SendStdInputButton.Location = new Point(284, 65);
+            SendStdInputButton.Name = "SendStdInputButton";
+            SendStdInputButton.Size = new Size(75, 23);
+            SendStdInputButton.TabIndex = 2;
+            SendStdInputButton.Text = "Send";
+            SendStdInputButton.UseVisualStyleBackColor = true;
+            // 
+            // StdInputTextBox
+            // 
+            StdInputTextBox.Enabled = false;
+            StdInputTextBox.Location = new Point(7, 64);
+            StdInputTextBox.Name = "StdInputTextBox";
+            StdInputTextBox.Size = new Size(271, 23);
+            StdInputTextBox.TabIndex = 1;
+            // 
+            // OutputLogRichTextBox
+            // 
+            OutputLogRichTextBox.Location = new Point(7, 6);
+            OutputLogRichTextBox.Name = "OutputLogRichTextBox";
+            OutputLogRichTextBox.ReadOnly = true;
+            OutputLogRichTextBox.Size = new Size(352, 54);
+            OutputLogRichTextBox.TabIndex = 0;
+            OutputLogRichTextBox.Text = "";
+            // 
+            // ExecutionSettingsTabControl
+            // 
+            ExecutionSettingsTabControl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            ExecutionSettingsTabControl.Controls.Add(ExecutionSettingsTabPage);
+            ExecutionSettingsTabControl.Location = new Point(11, 179);
+            ExecutionSettingsTabControl.Name = "ExecutionSettingsTabControl";
+            ExecutionSettingsTabControl.SelectedIndex = 0;
+            ExecutionSettingsTabControl.Size = new Size(374, 225);
+            ExecutionSettingsTabControl.TabIndex = 5;
+            // 
+            // ExecutionSettingsTabPage
+            // 
+            ExecutionSettingsTabPage.Controls.Add(SettingsMainGroupBox);
+            ExecutionSettingsTabPage.Controls.Add(SettingsExecutionTypeGroupBox);
+            ExecutionSettingsTabPage.Location = new Point(4, 24);
+            ExecutionSettingsTabPage.Name = "ExecutionSettingsTabPage";
+            ExecutionSettingsTabPage.Padding = new Padding(3);
+            ExecutionSettingsTabPage.Size = new Size(366, 197);
+            ExecutionSettingsTabPage.TabIndex = 0;
+            ExecutionSettingsTabPage.Text = "Settings";
+            ExecutionSettingsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // SettingsMainGroupBox
+            // 
+            SettingsMainGroupBox.Controls.Add(SettingsCreationGroupBox);
+            SettingsMainGroupBox.Controls.Add(SettingsArgumentsGroupBox);
+            SettingsMainGroupBox.Location = new Point(7, 62);
+            SettingsMainGroupBox.Name = "SettingsMainGroupBox";
+            SettingsMainGroupBox.Size = new Size(352, 127);
+            SettingsMainGroupBox.TabIndex = 1;
+            SettingsMainGroupBox.TabStop = false;
+            SettingsMainGroupBox.Text = "Settings";
+            // 
+            // SettingsCreationGroupBox
+            // 
+            SettingsCreationGroupBox.Controls.Add(RunAsCheckBox);
+            SettingsCreationGroupBox.Controls.Add(LoadUserProfileCheckBox);
+            SettingsCreationGroupBox.Controls.Add(CreateNoWindowCheckBox);
+            SettingsCreationGroupBox.Location = new Point(8, 74);
+            SettingsCreationGroupBox.Name = "SettingsCreationGroupBox";
+            SettingsCreationGroupBox.Size = new Size(336, 47);
+            SettingsCreationGroupBox.TabIndex = 1;
+            SettingsCreationGroupBox.TabStop = false;
+            SettingsCreationGroupBox.Text = "Creation Settings";
+            // 
+            // RunAsCheckBox
+            // 
+            RunAsCheckBox.AutoSize = true;
+            RunAsCheckBox.Location = new Point(263, 19);
+            RunAsCheckBox.Name = "RunAsCheckBox";
+            RunAsCheckBox.Size = new Size(63, 19);
+            RunAsCheckBox.TabIndex = 2;
+            RunAsCheckBox.Text = "Run As";
+            RunAsCheckBox.UseVisualStyleBackColor = true;
             // 
             // LoadUserProfileCheckBox
             // 
             LoadUserProfileCheckBox.AutoSize = true;
-            LoadUserProfileCheckBox.Location = new Point(238, 44);
+            LoadUserProfileCheckBox.Location = new Point(142, 19);
             LoadUserProfileCheckBox.Name = "LoadUserProfileCheckBox";
-            LoadUserProfileCheckBox.Size = new Size(193, 34);
-            LoadUserProfileCheckBox.TabIndex = 2;
-            LoadUserProfileCheckBox.Text = "User-Profil laden";
+            LoadUserProfileCheckBox.Size = new Size(115, 19);
+            LoadUserProfileCheckBox.TabIndex = 1;
+            LoadUserProfileCheckBox.Text = "Load User Profile";
             LoadUserProfileCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // RedirectAllOutputCheckBox
-            // 
-            RedirectAllOutputCheckBox.AutoSize = true;
-            RedirectAllOutputCheckBox.Location = new Point(15, 86);
-            RedirectAllOutputCheckBox.Margin = new Padding(5, 6, 5, 6);
-            RedirectAllOutputCheckBox.Name = "RedirectAllOutputCheckBox";
-            RedirectAllOutputCheckBox.Size = new Size(216, 34);
-            RedirectAllOutputCheckBox.TabIndex = 1;
-            RedirectAllOutputCheckBox.Text = "Redirect All Output";
-            RedirectAllOutputCheckBox.UseVisualStyleBackColor = true;
             // 
             // CreateNoWindowCheckBox
             // 
             CreateNoWindowCheckBox.AutoSize = true;
-            CreateNoWindowCheckBox.Location = new Point(15, 44);
-            CreateNoWindowCheckBox.Margin = new Padding(5, 6, 5, 6);
+            CreateNoWindowCheckBox.Location = new Point(10, 19);
             CreateNoWindowCheckBox.Name = "CreateNoWindowCheckBox";
-            CreateNoWindowCheckBox.Size = new Size(215, 34);
+            CreateNoWindowCheckBox.Size = new Size(126, 19);
             CreateNoWindowCheckBox.TabIndex = 0;
             CreateNoWindowCheckBox.Text = "Create No Window";
             CreateNoWindowCheckBox.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // SettingsArgumentsGroupBox
             // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(SystemInformationLabel);
-            panel2.Controls.Add(label2);
-            panel2.Controls.Add(label1);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 42);
-            panel2.Margin = new Padding(5, 6, 5, 6);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(727, 152);
-            panel2.TabIndex = 5;
+            SettingsArgumentsGroupBox.Controls.Add(ArgsTextBox);
+            SettingsArgumentsGroupBox.Location = new Point(8, 16);
+            SettingsArgumentsGroupBox.Name = "SettingsArgumentsGroupBox";
+            SettingsArgumentsGroupBox.Padding = new Padding(9, 4, 9, 3);
+            SettingsArgumentsGroupBox.Size = new Size(336, 52);
+            SettingsArgumentsGroupBox.TabIndex = 0;
+            SettingsArgumentsGroupBox.TabStop = false;
+            SettingsArgumentsGroupBox.Text = "Arguments";
             // 
-            // SystemInformationLabel
+            // ArgsTextBox
             // 
-            SystemInformationLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            SystemInformationLabel.AutoEllipsis = true;
-            SystemInformationLabel.Location = new Point(21, 102);
-            SystemInformationLabel.Margin = new Padding(5, 0, 5, 0);
-            SystemInformationLabel.Name = "SystemInformationLabel";
-            SystemInformationLabel.Size = new Size(686, 32);
-            SystemInformationLabel.TabIndex = 2;
-            SystemInformationLabel.Text = "%SystemInfo%";
+            ArgsTextBox.Dock = DockStyle.Fill;
+            ArgsTextBox.Location = new Point(9, 20);
+            ArgsTextBox.Name = "ArgsTextBox";
+            ArgsTextBox.Size = new Size(318, 23);
+            ArgsTextBox.TabIndex = 0;
             // 
-            // label2
+            // SettingsExecutionTypeGroupBox
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(21, 50);
-            label2.Margin = new Padding(5, 0, 5, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(184, 30);
-            label2.TabIndex = 1;
-            label2.Text = "Dateien ausführen";
+            SettingsExecutionTypeGroupBox.Controls.Add(ExecutionTypeComboBox);
+            SettingsExecutionTypeGroupBox.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            SettingsExecutionTypeGroupBox.Location = new Point(7, 6);
+            SettingsExecutionTypeGroupBox.Name = "SettingsExecutionTypeGroupBox";
+            SettingsExecutionTypeGroupBox.Padding = new Padding(8, 5, 8, 3);
+            SettingsExecutionTypeGroupBox.Size = new Size(352, 52);
+            SettingsExecutionTypeGroupBox.TabIndex = 0;
+            SettingsExecutionTypeGroupBox.TabStop = false;
+            SettingsExecutionTypeGroupBox.Text = "Execution Type";
             // 
-            // label1
+            // ExecutionTypeComboBox
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            label1.Location = new Point(21, 20);
-            label1.Margin = new Padding(5, 0, 5, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(133, 30);
-            label1.TabIndex = 0;
-            label1.Text = "ShellRunner";
+            ExecutionTypeComboBox.Dock = DockStyle.Fill;
+            ExecutionTypeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            ExecutionTypeComboBox.FormattingEnabled = true;
+            ExecutionTypeComboBox.Items.AddRange(new object[] { "NoShellExecute", "ShellExecute", "CMD /k" });
+            ExecutionTypeComboBox.Location = new Point(8, 21);
+            ExecutionTypeComboBox.Name = "ExecutionTypeComboBox";
+            ExecutionTypeComboBox.Size = new Size(336, 23);
+            ExecutionTypeComboBox.TabIndex = 0;
+            ExecutionTypeComboBox.SelectedIndexChanged += ExecutionTypeComboBox_SelectedIndexChanged;
             // 
-            // ApplicationMainMenuStrip
+            // ProcessInformationUpdateTimer
             // 
-            ApplicationMainMenuStrip.ImageScalingSize = new Size(28, 28);
-            ApplicationMainMenuStrip.Items.AddRange(new ToolStripItem[] { shellRunnerToolStripMenuItem });
-            ApplicationMainMenuStrip.Location = new Point(0, 0);
-            ApplicationMainMenuStrip.Name = "ApplicationMainMenuStrip";
-            ApplicationMainMenuStrip.Padding = new Padding(10, 4, 0, 4);
-            ApplicationMainMenuStrip.Size = new Size(727, 42);
-            ApplicationMainMenuStrip.TabIndex = 6;
-            ApplicationMainMenuStrip.Text = "menuStrip1";
-            // 
-            // shellRunnerToolStripMenuItem
-            // 
-            shellRunnerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { überToolStripMenuItem });
-            shellRunnerToolStripMenuItem.Name = "shellRunnerToolStripMenuItem";
-            shellRunnerToolStripMenuItem.Size = new Size(142, 34);
-            shellRunnerToolStripMenuItem.Text = "ShellRunner";
-            // 
-            // überToolStripMenuItem
-            // 
-            überToolStripMenuItem.Name = "überToolStripMenuItem";
-            überToolStripMenuItem.Size = new Size(188, 40);
-            überToolStripMenuItem.Text = "About";
-            überToolStripMenuItem.Click += überToolStripMenuItem_Click;
+            ProcessInformationUpdateTimer.Interval = 1000;
+            ProcessInformationUpdateTimer.Tick += ProcessInformationUpdateTimer_Tick;
             // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(12F, 30F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(727, 860);
-            Controls.Add(panel2);
-            Controls.Add(groupBox3);
-            Controls.Add(ExecuteBtn);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Controls.Add(panel1);
+            ClientSize = new Size(396, 563);
+            Controls.Add(ExecutionSettingsTabControl);
+            Controls.Add(InformationTabControl);
+            Controls.Add(SettingsFileGroupBox);
+            Controls.Add(ApplicationHeaderPanel);
+            Controls.Add(ApplicationMainStatusStrip);
             Controls.Add(ApplicationMainMenuStrip);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             KeyPreview = true;
             MainMenuStrip = ApplicationMainMenuStrip;
-            Margin = new Padding(5, 6, 5, 6);
+            MaximizeBox = false;
             Name = "MainForm";
             ShowIcon = false;
             Text = "ShellRunner";
             Load += MainForm_Load;
-            KeyDown += MainForm_KeyDown;
-            panel1.ResumeLayout(false);
-            FileGroupBox.ResumeLayout(false);
-            FileGroupBox.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            ApplicationMainMenuStrip.ResumeLayout(false);
-            ApplicationMainMenuStrip.PerformLayout();
+            ApplicationMainStatusStrip.ResumeLayout(false);
+            ApplicationMainStatusStrip.PerformLayout();
+            ApplicationHeaderPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)ProcessIconPictureBox).EndInit();
+            SettingsFileGroupBox.ResumeLayout(false);
+            SettingsFileGroupBox.PerformLayout();
+            InformationTabControl.ResumeLayout(false);
+            ProcessInformationTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)ProcessIconNdPictureBox).EndInit();
+            ProcessOutputTabPage.ResumeLayout(false);
+            ProcessOutputTabPage.PerformLayout();
+            ExecutionSettingsTabControl.ResumeLayout(false);
+            ExecutionSettingsTabPage.ResumeLayout(false);
+            SettingsMainGroupBox.ResumeLayout(false);
+            SettingsCreationGroupBox.ResumeLayout(false);
+            SettingsCreationGroupBox.PerformLayout();
+            SettingsArgumentsGroupBox.ResumeLayout(false);
+            SettingsArgumentsGroupBox.PerformLayout();
+            SettingsExecutionTypeGroupBox.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -325,25 +462,39 @@
 
         #endregion
 
-        private Panel panel1;
-        private GroupBox FileGroupBox;
-        private Button SelectFileBtn;
-        private TextBox FileTextBox;
-        private GroupBox groupBox1;
-        private ComboBox ExecutionTypeComboBox;
-        private GroupBox groupBox2;
-        private TextBox ArgsTextBox;
-        private Button ExecuteBtn;
-        private GroupBox groupBox3;
-        private CheckBox CreateNoWindowCheckBox;
-        private CheckBox RedirectAllOutputCheckBox;
-        private Panel panel2;
+        private StatusStrip ApplicationMainStatusStrip;
         private MenuStrip ApplicationMainMenuStrip;
-        private Label label1;
-        private Label SystemInformationLabel;
-        private Label label2;
-        private ToolStripMenuItem shellRunnerToolStripMenuItem;
-        private ToolStripMenuItem überToolStripMenuItem;
+        private Panel ApplicationHeaderPanel;
+        private Label InfoStatusLabel;
+        private Label TitleStatusLabel;
+        private PictureBox ProcessIconPictureBox;
+        private GroupBox SettingsFileGroupBox;
+        private TextBox FileTextBox;
+        private Button SelectFileButton;
+        private ToolStripStatusLabel MainToolStripStatusLabel;
+        private ToolStripStatusLabel MainInfoToolStripStatusLabel;
+        private TabControl InformationTabControl;
+        private TabPage ProcessInformationTabPage;
+        private TabPage ProcessOutputTabPage;
+        private TabControl ExecutionSettingsTabControl;
+        private TabPage ExecutionSettingsTabPage;
+        private PictureBox ProcessIconNdPictureBox;
+        private Label ProcessDescriptionLabel;
+        private Label ProcessTitleLabel;
+        private Label ProcessMoreInfoLabel;
+        private System.Windows.Forms.Timer ProcessInformationUpdateTimer;
+        private GroupBox SettingsExecutionTypeGroupBox;
+        private ComboBox ExecutionTypeComboBox;
+        private GroupBox SettingsMainGroupBox;
+        private GroupBox SettingsArgumentsGroupBox;
+        private TextBox ArgsTextBox;
+        private GroupBox SettingsCreationGroupBox;
         private CheckBox LoadUserProfileCheckBox;
+        private CheckBox CreateNoWindowCheckBox;
+        private CheckBox RunAsCheckBox;
+        private Button RunOrKillButton;
+        private Button SendStdInputButton;
+        private TextBox StdInputTextBox;
+        private RichTextBox OutputLogRichTextBox;
     }
 }
